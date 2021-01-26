@@ -47,10 +47,6 @@ function showSongs(data) {
 }
 
 async function fetchSearchedSongs(song) {
-  // fetch(`${API_URL}/suggest/${song}`)
-  // .then(res => res.json())
-  // .then(data=>console.log(data));
-
   const res = await fetch(`${API_URL}/suggest/${song}`);
   const data = await res.json();
   console.log(data);
