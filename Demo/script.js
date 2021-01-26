@@ -15,10 +15,11 @@ function showSongs(data) {
   var output = "";
   data.data.forEach((song) => {
     var songPicture= song.artist.picture_small.replace("http","https");
+    var songPreview= song.preview.replace("http","https");
     output += `
     <div>
       <li><span><img style="border-radius:50%;" class="song_image" alt="image.jpg" src="${songPicture}"/></span><span style="max-width:200px;"><strong>${song.artist.name}</strong> - ${song.title}</span>
-      <audio controls width="200" height="30"><source src="${song.preview}"></audio>
+      <audio controls width="200" height="30"><source src="${songPreview}"></audio>
       <button class="btn" data-artist="${song.artist.name}" data-songtitle="${song.title}">Get Lyrics</button></li>
     </div>
     `;
